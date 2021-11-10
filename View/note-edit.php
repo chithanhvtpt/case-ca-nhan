@@ -9,6 +9,7 @@
 </head>
 <body>
 <form action="" method="post">
+    <input type="text" name="id" value="<?php echo $note['id'] ?>" hidden>
     <input type="text" name="title" placeholder="Tiêu đề" value="<?php echo $note["title"];?>">
     <input type="text" name="content" placeholder="Nội dung" value="<?php echo $note["content"];?>">
     <input type="text" name="tag" placeholder="Tag" value="<?php echo $note["tag"]?>">

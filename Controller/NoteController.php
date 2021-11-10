@@ -48,15 +48,16 @@ class NoteController
         include_once "View/note-detail.php";
     }
 
-    public function edit($id)
+    public function edit($id, $request)
     {
-        $note = $this->noteModel->getById($id, $request);
+        $note = $this->noteModel->getById($id);
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $data = [
                 "title" => $request["title"],
                 "content" => $request["content"],
                 "tag" => $request["tag"],
-                "dates" => $request["dates"]
+                "dates" => $request["dates"],
+                "id" => $id
             ];
             $this->noteModel->edit($data);
             header("location:index.php");
